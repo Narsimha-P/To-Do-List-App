@@ -1,0 +1,237 @@
+/* === Reset & Base === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* === Light Theme === */
+body.light {
+  background: linear-gradient(to right, #c6ffdd, #fbd786, #f7797d);
+  color: #333;
+}
+
+body.light .container {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+body.light input {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+body.light li {
+  background-color: #ffe9e3;
+}
+
+body.light button {
+  background-color: #4dd0e1;
+  color: white;
+}
+
+body.light button:hover {
+  background-color: #00acc1;
+}
+
+/* === Dark Theme === */
+body.dark {
+  background: linear-gradient(to right, #2c3e50, #4ca1af);
+  color: #f0f0f0;
+}
+
+body.dark .container {
+  background-color: rgba(30, 30, 30, 0.85);
+}
+
+body.dark input {
+  background-color: #333;
+  color: #f0f0f0;
+}
+
+body.dark li {
+  background-color: #555;
+}
+
+body.dark button {
+  background-color: #ba68c8;
+  color: white;
+}
+
+body.dark button:hover {
+  background-color: #9c27b0;
+}
+
+/* === Common Elements === */
+.container {
+  padding: 30px 20px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  margin-top: 80px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.input-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+input[type="text"] {
+  flex: 1 1 70%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+}
+
+button {
+  flex: 1 1 25%;
+  padding: 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+li {
+  padding: 12px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+li span {
+  flex: 1;
+  word-break: break-word;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.actions .edit {
+  background-color: #ffca28;
+  color: black;
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.actions .delete {
+  background-color: #ef5350;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+/* === Theme Toggle Switch === */
+.theme-switch-wrapper {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.theme-switch {
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  position: relative;
+}
+
+.theme-switch input {
+  display: none;
+}
+
+.slider {
+  background-color: #ccc;
+  border-radius: 30px;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+}
+
+.slider:before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+input:checked + .slider:before {
+  transform: translateX(28px);
+}
+
+.sun,
+.moon {
+  position: absolute;
+  top: 4px;
+  font-size: 18px;
+}
+
+.sun {
+  left: 5px;
+}
+
+.moon {
+  right: 5px;
+}
+
+/* === Responsive === */
+@media (max-width: 480px) {
+  .input-group {
+    flex-direction: column;
+  }
+
+  .input-group input,
+  .input-group button {
+    width: 100%;
+  }
+
+  .actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
