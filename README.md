@@ -23,10 +23,6 @@ This project includes:
 
 ---
 
-## 🚀 Live Demo
-
-👉 [Live on GitHub Pages](Aura-task.netlify.app)
-
 ## 🛠️ Technologies Used
 
 - HTML5
